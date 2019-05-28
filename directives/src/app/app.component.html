@@ -10,8 +10,6 @@
         <div *ngIf="onlyOdd">
           <li
             class="list-group-item"
-            [ngClass]="{odd: odd % 2 !== 0}"
-            [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'}"
             *ngFor="let odd of oddNumbers">
             {{ odd }}
           </li>
@@ -21,14 +19,42 @@
         <div *ngIf="!onlyOdd">
           <li
             class="list-group-item"
-            [ngClass]="{even: even % 2 === 0}"
-            [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'green'}"
             *ngFor="let even of evenNumbers">
             {{ even }}
           </li>
         </div>
       </ul>
-      <p appBasicHighlight>Style me with basic directive!</p>
+      <p appBetterHighlight>Style me with a better directive!</p>
     </div>
   </div>
 </div>
+
+
+
+
+<!-- Note: see app.component.css -->
+<!-- [ngClass]="{odd: odd % 2 !== 0}" -->
+<!-- [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'}" -->
+
+<!-- [ngClass]="{even: even % 2 === 0}" -->
+<!-- [ngStyle]="{backgroundColor: even % 2 !== 0 ? 'yellow' : 'green'}" -->
+
+<!-- Custom Directives -->
+<!-- <p appBasicHighlight>Style me with basic directive!</p> -->
+
+<!-- Note: for render or HostBiding -->
+<!-- <p  style="background-color: blueviolet">Style me with a better directive!</p> -->
+<!-- <p appBetterHighlight>Style me with a better directive!</p> -->
+
+<!-- <p appBetterHighlight [highlightColor]="'red'" [defaultColor]="'yellow'">Style me with a better directive!</p> -->
+
+<!-- <p [appBetterHighlight]="'red'" [defaultColor]="'yellow'">Style me with a better directive!</p> -->
+<!-- 
+      <input type="text" [(ngModel)]="value">
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">Value is 5</p>
+        <p *ngSwitchCase="10">Value is 10</p>
+        <p *ngSwitchCase="100">Value is 100</p>
+        <p *ngSwitchDefault>Value is Default</p>
+      </div>
+ -->
